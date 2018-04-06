@@ -4,16 +4,17 @@
 
   <h2>Titles</h2>
   <% @titles.each do |title| %>
-    <p><%= title.name %><input type="checkbox" name="figure[title_ids][]" id="title_name"></p>
+    <p><%= title.name %><input type="checkbox" name="figure[title_ids][<%=title.id%>]" id="title_name"></p>
   <% end %>
-  
   <h2>Create New Title:</h2>
-    <input name="title[name]" type="text" id="title_name"><br>
+    <input name="title[name]" type="text" id="new_title"><br>
+
   <h2>Landmarks</h2>
   <% @landmarks.each do |landmark| %>
-    <p><%= landmark.name %><input type="checkbox" name="figure[landmark_ids][]" id="landmark_name"></p>
+    <p><%= landmark.name %><input type="checkbox" name="figure[landmark_ids][<%=landmark.id%>]" id="landmark_name"></p>
   <% end %>
+
   <h2>Create New Landmark:</h2>
-    <p>Name<input name="landmark[name]" type="text" id="landmark_name"></p>
+    <p>Name<input name="landmark[name]" type="text" id="new_landmark"></p>
     <p>Year<input name="landmark[year_completed]" type="text" id="landmark_year_completed"></p> <button>Create New Figure</button>
 </form>
